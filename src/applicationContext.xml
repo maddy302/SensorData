@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ctx="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-2.5.xsd ">
+<bean id="SqlBean" class="helper.SNSRDbQuery">
+<property name="insertFile" value="INSERT INTO FILE_DETAILS (FILE_NAME,EXTENSION,DESCRIPTION,CREATED_AT) VALUES (?,?,?,now())"></property>
+<property name="getFile" value="SELECT ID,FILE_NAME,EXTENSION,DESCRIPTION,CREATED_AT,PROCESSED FROM FILE_DETAILS
+WHERE FILE_NAME=? AND EXTENSION=?"></property>
+<property name="getFileList" value="SELECT ID,FILE_NAME,EXTENSION,DESCRIPTION,CREATED_AT FROM FILE_DETAILS "></property>
+<property name="insertSensorData" value="INSERT INTO SENSOR_DATA (LONGITUDE,LATITUDE,SENSOR_ID,VALUE,UPDATED_TIME) VALUES (?,?,?,?,?)"></property>
+<property name="updateProcessedFlag" value="UPDATE FILE_DETAILS SET PROCESSED=? WHERE FILE_NAME=? AND EXTENSION=?"></property>
+</bean>
+</beans>
