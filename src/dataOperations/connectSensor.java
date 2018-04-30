@@ -46,6 +46,7 @@ public class connectSensor {
 			/*String uri = "https://coastwatch.pfeg.noaa.gov/erddap/tabledap/pmelTaoDySst.csv?"
 					+"longitude,latitude,time,station,wmo_platform_code,T_25"+"&time>=2015-05-23T12:00:00Z"
 					+"&time<=2015-05-31T12:00:00Z";*/
+			//Need to make a repository of urls for data
 			String uri2 = "https://coastwatch.pfeg.noaa.gov/erddap/tabledap/pmelTaoDySst.csv?"+
 					"longitude,latitude,time,station,wmo_platform_code,T_25&time%3E=2015-05-23T12:00:00Z&time%3C=2015-05-31T12:00:00Z";
 			URL erddap = new URL(uri2);
