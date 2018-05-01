@@ -40,16 +40,27 @@ public class connectSensor {
 	
 	public static void getSensorData(LocalDateTime date)
 	{
+		ArrayList<String> listOfDataSources = new ArrayList<String>();
+		LocalDateTime sampleDateTime = LocalDateTime.now();
+		listOfDataSources.add("https://coastwatch.pfeg.noaa.gov/erddap/tabledap/pmelTaoDySst.csv?"+
+				"longitude,latitude,time,station,wmo_platform_code,T_25&time%3E=2015-05-23T12:00:00Z&time%3C=2015-05-31T12:00:00Z");
+		
+		listOfDataSources.add("https://coastwatch.pfeg.noaa.gov/erddap/tabledap/scrippsGliders.csv?"
+				+ "institution%2Cplatform_id%2Cplatform_type%2Cwmo_id%2Ctime%2Clatitude%2Clongitude%2Cpressure%2Ctemperature%2Csalinity%2Cconductivity&"
+				+ "time%3E=2018-03-22&time%3C=2018-04-30T16%3A14%3A30Z&"
+				+ "latitude%3E=30.5&latitude%3C=40.97715&longitude%3E=-125.6113&longitude%3C=-108"
+				+ "&distinct()&orderBy(%22time%22)");
+		/*String uri = "https://coastwatch.pfeg.noaa.gov/erddap/tabledap/pmelTaoDySst.csv?"
+				+"longitude,latitude,time,station,wmo_platform_code,T_25"+"&time>=2015-05-23T12:00:00Z"
+				+"&time<=2015-05-31T12:00:00Z";*/
+		//Need to make a repository of urls for data
+		String uri2 = "https://coastwatch.pfeg.noaa.gov/erddap/tabledap/pmelTaoDySst.csv?"+
+				"longitude,latitude,time,station,wmo_platform_code,T_25&time%3E=2015-05-23T12:00:00Z&time%3C=2015-05-31T12:00:00Z";
+		
 
 		try {
-			LocalDateTime sampleDateTime = LocalDateTime.now();
-			/*String uri = "https://coastwatch.pfeg.noaa.gov/erddap/tabledap/pmelTaoDySst.csv?"
-					+"longitude,latitude,time,station,wmo_platform_code,T_25"+"&time>=2015-05-23T12:00:00Z"
-					+"&time<=2015-05-31T12:00:00Z";*/
-			//Need to make a repository of urls for data
-			String uri2 = "https://coastwatch.pfeg.noaa.gov/erddap/tabledap/pmelTaoDySst.csv?"+
-					"longitude,latitude,time,station,wmo_platform_code,T_25&time%3E=2015-05-23T12:00:00Z&time%3C=2015-05-31T12:00:00Z";
-			URL erddap = new URL(uri2);
+			for(int i=0;i<listOfDataSources.size();i++) {
+			URL erddap = new URL(listOfDataSources.get(i));
 			HttpURLConnection connectionToErddap = (HttpURLConnection)erddap.openConnection();
 
 			/*InputStreamReader inpStrRdr = new InputStreamReader(connectionToErddap.getInputStream());
@@ -105,9 +116,11 @@ public class connectSensor {
 			}
 			else {
 				Error x = new Error("The website to fetch data isn't responding");
-				throw x;
+				//throw x;
+				x.printStackTrace();
 			}
 
+		}
 		}
 		catch(Exception ex) {
 			ex.printStackTrace();

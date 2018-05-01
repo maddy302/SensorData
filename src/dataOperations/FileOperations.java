@@ -66,7 +66,26 @@ public class FileOperations {
 		
 		return records;
 		
-	}
+	} 
+	
+	public int persistSensorBatchObject(ArrayList<OceanSensor> x) {
+		int status=0;
+		
+		//ArrayList<String> fileNames = getFileNamesFromDir();
+		DataOps d = new DataOps();
+		try {
+			 status = d.bacthPersist(x);
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+		return status;
+		
+	} 
 	public boolean checkIfFileProcessed(FilePOJO x) {
 		// TODO Auto-generated method stub
 		boolean stat = false;

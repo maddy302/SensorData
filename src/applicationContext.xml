@@ -10,7 +10,8 @@
 <property name="getFile" value="SELECT ID,FILE_NAME,EXTENSION,DESCRIPTION,CREATED_AT,PROCESSED FROM FILE_DETAILS
 WHERE FILE_NAME=? AND EXTENSION=?"></property>
 <property name="getFileList" value="SELECT ID,FILE_NAME,EXTENSION,DESCRIPTION,CREATED_AT FROM FILE_DETAILS "></property>
-<property name="insertSensorData" value="INSERT INTO SENSOR_DATA (LONGITUDE,LATITUDE,SENSOR_ID,VALUE,UPDATED_TIME) VALUES (?,?,?,?,?)"></property>
+<property name="insertSensorData" value="INSERT INTO SENSOR_DATA (LATITUDE,LONGITUDE,SENSOR_ID,PRESSURE,
+TEMPERATURE_C,SALINITY,CONDUCTIVITY,TIME_RECORDED) VALUES (?,?,?,?,?,?,?,?)"></property>
 <property name="updateProcessedFlag" value="UPDATE FILE_DETAILS SET PROCESSED=? WHERE FILE_NAME=? AND EXTENSION=?"></property>
 </bean>
 </beans>

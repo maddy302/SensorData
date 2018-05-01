@@ -1,0 +1,23 @@
+Bay Area coordinates
+38.678118, -123.415243
+
+36.579241, -121.967975
+
+yolocounty
+38.518181, -121.673404
+
+santaclara
+37.357155, -121.607486
+
+
+
+http://sccoos.org/erddap/tabledap/autoss.csv?station%2Ctime%2Ctemperature%2Cconductivity%2Cpressure%2Csalinity%2Csigmat%2Clatitude%2Clongitude%2Cdepth&time%3E=2018-04-23T00%3A00%3A00Z&time%3C=2018-04-30T21%3A07%3A23Z&distinct()&orderBy(%22time%22)
+
+
+https://coastwatch.pfeg.noaa.gov/erddap/tabledap/erdGtsppBest.csv?org%2Ctype%2Cstation_id%2Clongitude%2Clatitude%2Ctime%2Ctemperature%2Csalinity&time%3E=2018-03-28T10%3A31%3A00Z&time%3C=2018-03-28T10%3A31%3A00Z&distinct()&orderBy(%22time%22)
+
+Latest- 
+https://coastwatch.pfeg.noaa.gov/erddap/tabledap/scrippsGliders.csv?institution%2Cplatform_id%2Cplatform_type%2Cwmo_id%2Ctime%2Clatitude%2Clongitude%2Cpressure%2Ctemperature%2Csalinity%2Cconductivity&time%3E=2018-03-22&time%3C=2018-04-30T16%3A14%3A30Z&latitude%3E=30.5&latitude%3C=40.97715&longitude%3E=-125.6113&longitude%3C=-108&distinct()&orderBy(%22time%22)
+
+
+

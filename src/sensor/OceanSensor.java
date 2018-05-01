@@ -1,10 +1,16 @@
 package sensor;
 
+import java.time.LocalDateTime;
+
 public class OceanSensor extends sensorMeta{
 
 	private String coordinates;
 	private double t_25;
+	private double pressure,salinity,conductivity;
+	private LocalDateTime recorded_on; 
 	
+	
+
 	@Override
     public String toString() {
 		StringBuilder sb = new StringBuilder();
@@ -23,6 +29,46 @@ public class OceanSensor extends sensorMeta{
 
     }
 
+	public LocalDateTime getRecorded_on() {
+		return recorded_on;
+	}
+
+	public void setRecorded_on(LocalDateTime recorded_on) {
+		this.recorded_on = recorded_on;
+	}
+	public double getPressure() {
+		return pressure;
+	}
+
+
+
+	public void setPressure(double pressure) {
+		this.pressure = pressure;
+	}
+
+/*	public double getTemperature() {
+		return temperature;
+	}
+
+	public void setTemperature(double temperature) {
+		this.temperature = temperature;
+	}
+*/
+	public double getSalinity() {
+		return salinity;
+	}
+
+	public void setSalinity(double salinity) {
+		this.salinity = salinity;
+	}
+
+	public double getConductivity() {
+		return conductivity;
+	}
+
+	public void setConductivity(double conductivity) {
+		this.conductivity = conductivity;
+	}
 	public double getT_25() {
 		return t_25;
 	}
